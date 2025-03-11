@@ -7,8 +7,6 @@
 }
 
 body {
-    background-color: #121212;
-    color: #ffffff;
     text-align: center;
 }
 
@@ -17,14 +15,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #1e1e1e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #00d9ff;
 }
 
 nav ul {
@@ -37,108 +33,104 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
     text-decoration: none;
     font-size: 1.1em;
 }
 
 nav ul li a:hover {
-    color: #00d9ff;
-}
-
-#hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-}
-
-#hero h1 {
-    font-size: 2.5em;
-}
-
-#hero h1 span {
-    color: #00d9ff;
-}
-
-#hero h2 {
-    font-size: 1.5em;
-    margin-top: 10px;
-    color: #bbb;
+    text-decoration: underline;
 }
 
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
-    background: #00d9ff;
-    color: #121212;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
-.btn:hover {
+footer {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Home Page Styles */
+body.home {
+    background-color: #121212;
+    color: #ffffff;
+}
+header.home {
+    background: #1e1e1e;
+}
+.btn.home {
+    background: #00d9ff;
+    color: #121212;
+}
+.btn.home:hover {
     background: #008fb3;
 }
 
-#about, #skills, #projects, #contact {
-    padding: 50px 20px;
+/* About Page Styles */
+body.about {
+    background-color: #f5f5f5;
+    color: #333;
+}
+header.about {
+    background: #555;
+}
+.btn.about {
+    background: #333;
+    color: white;
+}
+.btn.about:hover {
+    background: #777;
 }
 
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    padding: 20px;
+/* Skills Page Styles */
+body.skills {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+header.skills {
+    background: #0f3460;
+}
+.btn.skills {
+    background: #e94560;
+    color: white;
+}
+.btn.skills:hover {
+    background: #ff5f7e;
 }
 
-.skill {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-weight: bold;
+/* Projects Page Styles */
+body.projects {
+    background-color: #16213e;
+    color: #ffffff;
+}
+header.projects {
+    background: #0f3460;
+}
+.btn.projects {
+    background: #ffb400;
+    color: #121212;
+}
+.btn.projects:hover {
+    background: #ffcc66;
 }
 
-.project {
-    background: #1e1e1e;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Contact Page Styles */
+body.contact {
+    background-color: #222831;
+    color: #eeeeee;
 }
-
-.project img {
-    width: 100%;
-    border-radius: 10px;
+header.contact {
+    background: #393e46;
 }
-
-.project h3 {
-    margin-top: 10px;
-    font-size: 1.5em;
-    color: #00d9ff;
+.btn.contact {
+    background: #00adb5;
+    color: white;
 }
-
-.project p {
-    margin: 10px 0;
-    color: #bbb;
-}
-
-.project a {
-    color: #00d9ff;
-    text-decoration: none;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background: #1e1e1e;
-    padding: 15px;
-    margin-top: 20px;
+.btn.contact:hover {
+    background: #009da5;
 }

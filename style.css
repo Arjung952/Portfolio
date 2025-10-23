@@ -1,3 +1,6 @@
+/* Add this new line to the VERY TOP of your style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Lato:wght@400;700&display=swap');
+
 /* ===================================================================
    TABLE OF CONTENTS
    ===================================================================
@@ -26,22 +29,20 @@
 
 /* ===================================================================
    2. :root Variables
-   - Define your colors, fonts, and spacing here.
-   - To use a variable:  background-color: var(--primary-color);
-   - This makes it easy to change your site's theme later.
    =================================================================*/
 :root {
-    /* Colors */
-    --primary-color: #0a192f;   /* Example: Dark Navy Blue */
-    --secondary-color: #64ffda; /* Example: Bright Accent Mint */
-    --light-slate: #ccd6f6;     /* Example: Light text */
-    --slate: #8892b0;           /* Example: Darker text */
+    /* Colours (Dark "Tech" Theme) */
+    --primary-color: #0a192f;     /* Dark Navy Blue */
+    --secondary-color: #64ffda;   /* Bright "Cyber" Mint */
+    --light-slate: #ccd6f6;       /* Light text */
+    --slate: #8892b0;             /* Darker text */
     --white: #ffffff;
-    --background-color: #f8f9fa; /* Example: Light gray background */
+    --background-color: var(--primary-color); /* Use dark blue for background */
+    --card-background: #112240; /* Slightly lighter navy for cards */
 
     /* Fonts */
-    --font-primary: 'Arial', 'Helvetica', sans-serif;
-    --font-secondary: 'Georgia', 'Times New Roman', serif;
+    --font-primary: 'Lato', 'Arial', sans-serif;
+    --font-secondary: 'Roboto Mono', 'monospace'; /* Techy font */
 
     /* Spacing */
     --spacing-xs: 4px;
@@ -61,8 +62,8 @@
    =================================================================*/
 body {
     font-family: var(--font-primary);
-    background-color: var(--background-color);
-    color: var(--slate);
+    background-color: var(--background-color); /* This makes it dark */
+    color: var(--slate);                       /* This makes text lighter */
     line-height: 1.6;
 }
 

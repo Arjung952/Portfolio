@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Arjun Gupta</div>
-        <nav>
-            <ul>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-logo">Arjun G.</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <h1>Welcome, I'm <span>Arjun Gupta</span></h1>
-        <h2>Software Engineering Student @ MQU</h2>
-        <a href="projects.html" class="btn">View My Work</a>
-    </section>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Hi, I'm Arjun G. A passionate web developer.</p>
+                <a href="projects.html" class="btn">View My Work</a>
+            </div>
+        </section>
+        
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Arjun Gupta. All Rights Reserved.</p>
+    <footer class="main-footer">
+        <ul class="social-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Email</a></li>
+        </ul>
+        <p>&copy; 2025 Arjun G</p>
     </footer>
+
 </body>
 </html>

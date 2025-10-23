@@ -3,29 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Portfolio</title>
+    <title>About Me - Arjun G</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Arjun Gupta</div>
-        <nav>
-            <ul>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-logo">Arjun G.</a>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="skills.html">Skills</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a final-year software engineering student passionate about building scalable and efficient applications.</p>
-    </section>
+    <main>
+        <section class="about-section container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Arjun, a passionate software developer based in [Your City]. My journey into tech started with a simple "Hello World" and has grown into a full-blown passion for building efficient and beautiful applications.</p>
+                    <p>I love the challenge of solving complex problems and the thrill of seeing my code come to life. When I'm not coding, you can find me [Your Hobby, e.g., exploring new hiking trails, reading sci-fi novels, or experimenting with new recipes].</p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="about-skills-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2025 Arjun Gupta. All Rights Reserved.</p>
+    <footer class="main-footer">
+        <ul class="social-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Email</a></li>
+        </ul>
+        <p>&copy; 2025 Arjun G</p>
     </footer>
+
 </body>
 </html>

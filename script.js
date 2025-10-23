@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==================================================
-    // 3. Fade-in on Scroll (THIS IS THE FIX)
+    // 3. Fade-in on Scroll
     // ==================================================
     
     // Create an "observer"

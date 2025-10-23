@@ -3,40 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Portfolio</title>
+    <title>My Projects - Arjun G</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Arjun Gupta</div>
-        <nav>
-            <ul>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-logo">Arjun G.</a>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <img src="images/project1.jpg" alt="Project 1">
-            <h3>Project 1</h3>
-            <p>A full-stack web application built with React and Node.js.</p>
-            <a href="#">GitHub Repo</a>
-        </div>
-        <div class="project">
-            <img src="images/project2.jpg" alt="Project 2">
-            <h3>Project 2</h3>
-            <p>Machine learning project using Python and TensorFlow.</p>
-            <a href="#">GitHub Repo</a>
-        </div>
-    </section>
+    <main>
+        <section class="projects-section container">
+            <h2>My Projects</h2>
+            <p>Here's a selection of my work.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Project 1 Screenshot">
+                    <div class="project-card-content">
+                        <h3>Project Title 1</h3>
+                        <p>A brief description of your project. What did it do? What was the challenge?</p>
+                        <p class="project-tech">Tech: React, Node.js, MongoDB</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">Live Demo</a>
+                            <a href="#" class="btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
 
-    <footer>
-        <p>&copy; 2025 Arjun Gupta. All Rights Reserved.</p>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Project 2 Screenshot">
+                    <div class="project-card-content">
+                        <h3>Project Title 2</h3>
+                        <p>A brief description of your project. What did it do? What was the challenge?</p>
+                        <p class="project-tech">Tech: Python, Flask, Docker</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">Live Demo</a>
+                            <a href="#" class="btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Project 3 Screenshot">
+                    <div class="project-card-content">
+                        <h3>Project Title 3</h3>
+                        <p>A brief description of your project. What did it do? What was the challenge?</p>
+                        <p class="project-tech">Tech: JavaScript, HTML5, CSS3</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">Live Demo</a>
+                            <a href="#" class="btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="social-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Email</a></li>
+        </ul>
+        <p>&copy; 2025 Arjun G</p>
     </footer>
+
 </body>
 </html>

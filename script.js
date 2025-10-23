@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==================================================
-    // 2. NEW: Nav Shadow on Scroll
+    // 2. Nav Shadow on Scroll
     // ==================================================
     const header = document.querySelector('.main-header');
     window.addEventListener('scroll', () => {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==================================================
-    // 3. NEW: Fade-in on Scroll
+    // 3. Fade-in on Scroll (THIS IS THE FIX)
     // ==================================================
     
     // Create an "observer"

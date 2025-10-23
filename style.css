@@ -297,3 +297,187 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-card-content {
+    padding: var(--spacing-md);
+}
+
+.project-card-content h3 {
+    margin-top: 0;
+}
+
+.project-tech {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-links a {
+    margin-right: var(--spacing-md);
+    font-weight: bold;
+}
+
+/* ===================================================================
+   10. Page: Skills (skills.html)
+   =================================================================*/
+.skills-section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    min-height: 70vh;
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--light-slate);
+    margin-bottom: var(--spacing-lg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.skill-item {
+    background-color: var(--card-background);
+    color: var(--light-slate);
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    color: var(--secondary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================
+   11. Page: Contact (contact.html)
+   =================================================================*/
+.contact-section {
+    padding-top: var(--spacing-xl);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+}
+
+.contact-btn {
+    margin-top: var(--spacing-lg);
+    font-size: 1.2rem;
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+/* ===================================================================
+   12. NEW: Animations (Fade-in, Typing)
+   =================================================================*/
+
+/* --- Fade-in on Scroll --- */
+/* This class hides the element initially */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* This class is added by JS to fade the element in */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Typing Animation --- */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden; /* Ensures text isn't seen before animation */
+    white-space: nowrap; /* Keeps text on a single line */
+    border-right: .15em solid var(--secondary-color); /* The typewriter caret */
+    animation: 
+        typing 2.5s steps(30, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter caret blinking effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--secondary-color); }
+}
+
+
+/* ===================================================================
+   13. NEW: Cursor
+   =================================================================*/
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color); /* NEW: Orange dot */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+}
+
+.cursor-dot.hover-grow {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(247, 127, 0, 0.3); /* NEW: Faded orange */
+    border: 1px solid var(--secondary-color);
+}
+
+/* ===================================================================
+   14. Media Queries (Responsiveness)
+   =================================================================*/
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+
+    .hero-content h1 {
+        font-size: 4rem; /* Bigger hero text on desktop */
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

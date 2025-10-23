@@ -4,17 +4,19 @@
    TABLE OF CONTENTS
    ===================================================================
    1.  CSS Reset
-   2.  :root Variables (Dark "Tech" Theme)
+   2.  :root Variables (NEW Orange Tech Theme)
    3.  Global & Utility Styles
    4.  Typography
-   5.  Header & Navigation
+   5.  Header & Navigation (With Scroll Shadow)
    6.  Footer
-   7.  Page: Home (index.html)
-   8.  Page: About (about.html)
-   9.  Page: Projects (projects.html)
-   10. Page: Skills (skills.html)
-   11. Page: Contact (contact.html)
-   12. Media Queries (Responsiveness)
+   7.  Page: Home (With Typing Animation)
+   8.  Page: About
+   9.  Page: Projects
+   10. Page: Skills
+   11. Page: Contact
+   12. NEW: Animations (Fade-in, Typing)
+   13. NEW: Cursor
+   14. Media Queries
    =================================================================*/
 
 /* ===================================================================
@@ -27,17 +29,18 @@
 }
 
 /* ===================================================================
-   2. :root Variables (Dark "Tech" Theme)
+   2. :root Variables (NEW Orange Tech Theme)
    =================================================================*/
 :root {
-    /* Colors */
-    --primary-color: #0a192f;     /* Dark Navy Blue */
-    --secondary-color: #64ffda;   /* Bright "Cyber" Mint */
-    --light-slate: #ccd6f6;       /* Light text */
-    --slate: #8892b0;             /* Darker text */
+    /* Colors - NEW ORANGE THEME */
+    --primary-color: #0d1117;     /* Dark Charcoal (GitHub Dark Mode) */
+    --secondary-color: #f77f00;   /* Vibrant Orange */
+    --light-slate: #c9d1d9;       /* Light text (GitHub) */
+    --slate: #8b949e;             /* Darker text (GitHub) */
     --white: #ffffff;
     --background-color: var(--primary-color);
-    --card-background: #112240; /* Slightly lighter navy for cards */
+    --card-background: #161b22;   /* Slightly lighter charcoal for cards */
+    --border-color: #30363d;      /* Subtle border color */
 
     /* Fonts */
     --font-primary: 'Lato', 'Arial', sans-serif;
@@ -58,17 +61,23 @@
 /* ===================================================================
    3. Global & Utility Styles
    =================================================================*/
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-primary);
     background-color: var(--background-color);
     color: var(--slate);
     line-height: 1.6;
+    cursor: none; /* Hides default cursor */
 }
 
 a {
     color: var(--secondary-color);
     text-decoration: none;
     transition: all 0.3s ease;
+    cursor: none;
 }
 
 a:hover {
@@ -101,7 +110,7 @@ img {
 }
 
 .btn:hover {
-    background-color: rgba(100, 255, 218, 0.1);
+    background-color: rgba(247, 127, 0, 0.1); /* Faded orange */
 }
 
 /* ===================================================================
@@ -127,12 +136,17 @@ p {
    =================================================================*/
 .main-header {
     height: var(--nav-height);
-    background-color: rgba(10, 25, 47, 0.85); /* Semi-transparent dark bg */
+    background-color: rgba(13, 17, 23, 0.85); /* Semi-transparent dark bg */
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: box-shadow 0.3s ease;
+}
+
+/* NEW CLASS: This gets added by JavaScript on scroll */
+.main-header.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .main-nav {
@@ -278,153 +292,8 @@ p {
 
 .project-card {
     background-color: var(--card-background);
-    border: 1px solid #1e2d4a;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.project-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.project-card-content {
-    padding: var(--spacing-md);
-}
-
-.project-card-content h3 {
-    margin-top: 0;
-}
-
-.project-tech {
-    font-family: var(--font-secondary);
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-}
-
-.project-links a {
-    margin-right: var(--spacing-md);
-    font-weight: bold;
-}
-
-/* ===================================================================
-   10. Page: Skills (skills.html)
-   =================================================================*/
-.skills-section {
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
-    min-height: 70vh;
-}
-
-.skills-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--light-slate);
-    margin-bottom: var(--spacing-lg);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.skill-item {
-    background-color: var(--card-background);
-    color: var(--light-slate);
-    font-family: var(--font-secondary);
-    font-size: 1.1rem;
-    text-align: center;
-    padding: var(--spacing-lg) var(--spacing-md);
-    border-radius: 8px;
-    border: 1px solid #1e2d4a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-8px);
-    color: var(--secondary-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* ===================================================================
-   11. Page: Contact (contact.html)
-   =================================================================*/
-.contact-section {
-    padding-top: var(--spacing-xl);
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 600px;
-}
-
-.contact-section h2 {
-    font-size: 2.5rem;
-}
-
-.contact-btn {
-    margin-top: var(--spacing-lg);
-    font-size: 1.2rem;
-    padding: var(--spacing-md) var(--spacing-xl);
-}
-
-/* ===================================================================
-   12. Media Queries (Responsiveness)
-   =================================================================*/
-
-/* Medium screens (tablets) */
-@media (min-width: 768px) {
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.25rem; }
-}
-
-/* Large screens (desktops) */
-@media (min-width: 1024px) {
-    .projects-grid {
-        /* Change to 3 columns on large screens */
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ===================================================================
-   13. Animations & Cursor (script.js)
-   =================================================================*/
-.cursor-dot {
-    width: 10px;
-    height: 10px;
-    background-color: var(--secondary-color); /* The mint color */
-    border-radius: 50%;
-    position: fixed; /* This is key! */
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%); /* Center the dot on the cursor */
-    pointer-events: none; /* Allows you to click "through" the dot */
-    z-index: 9999;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-}
-
-/* This is the class our JS adds on hover */
-.cursor-dot.hover-grow {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(100, 255, 218, 0.3); /* Faded mint circle */
-    border: 1px solid var(--secondary-color);
-}
-
-/* Hide the default cursor so we only see our dot */
-body {
-    cursor: none;
-}

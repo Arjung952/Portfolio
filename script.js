@@ -1,27 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Create the cursor dot element
+
+    // ==================================================
+    // 1. Custom Cursor
+    // ==================================================
     const cursorDot = document.createElement('div');
     cursorDot.className = 'cursor-dot';
     document.body.appendChild(cursorDot);
 
-    // Move the dot
     window.addEventListener('mousemove', (e) => {
         cursorDot.style.left = `${e.clientX}px`;
         cursorDot.style.top = `${e.clientY}px`;
     });
 
-    // Add hover effects
-    // We select all links AND buttons AND .skill-item
     const interactiveElements = document.querySelectorAll('a, .btn, .skill-item, .project-card');
 
     interactiveElements.forEach((el) => {
-        // When mouse enters, grow the dot
         el.addEventListener('mouseenter', () => {
             cursorDot.classList.add('hover-grow');
         });
-        // When mouse leaves, shrink it back
         el.addEventListener('mouseleave', () => {
             cursorDot.classList.remove('hover-grow');
         });
     });
+
+    // ==================================================
+    // 2. NEW: Nav Shadow on Scroll
+    // ==================================================
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { // Add shadow after scrolling 50px
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ==================================================
+    // 3. NEW: Fade-in on Scroll
+    // ==================================================
+    
+    // Create an "observer"
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // If the element is on screen, add the 'fade-in' class
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the item is visible
+    });
+
+    // Tell the observer to watch all elements with the 'hidden' class
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
 });

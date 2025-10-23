@@ -398,3 +398,33 @@ p {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ===================================================================
+   13. Animations & Cursor (script.js)
+   =================================================================*/
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color); /* The mint color */
+    border-radius: 50%;
+    position: fixed; /* This is key! */
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%); /* Center the dot on the cursor */
+    pointer-events: none; /* Allows you to click "through" the dot */
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+/* This is the class our JS adds on hover */
+.cursor-dot.hover-grow {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(100, 255, 218, 0.3); /* Faded mint circle */
+    border: 1px solid var(--secondary-color);
+}
+
+/* Hide the default cursor so we only see our dot */
+body {
+    cursor: none;
+}
